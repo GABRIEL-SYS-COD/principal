@@ -409,7 +409,7 @@ nav {
     width: 92%;
     height: 92%;
     border-radius: 50%;
-   
+   background-image: url('../imagenes/gabriel1.png');
     background-size: cover;
     background-position: center;
     position: relative;
