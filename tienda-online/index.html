@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            /* overflow: hidden; */
+        }
+
+        /* Fondo estilo */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif');
+            background-size: cover;
+            z-index: -1;
+        }
+
+        .crystal-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        header, footer {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .content {
+            /* display: flex; */
+            flex: 1;
+            padding: 20px;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .column img {
+            width: 100%;
+            height: auto;
+        }
+
+        .middle-column {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .middle-column img {
+            width: 23%;
+            margin: 5px;
+            height: 25%;
+        }
+        blockquote {
+        margin-left: 0;
+        }
+        .reviews-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        .review {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .review h3 {
+            margin: 0;
+        }
+        .review p {
+            margin: 5px 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+        }
+
+        footer h3 {
+             color: #f7c600;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        /* footer hr{
+            background-color: #fff8f800;
+            color: rgba(240, 248, 255, 0);
+        } */
+        
+    </style>
+</head>
+<body>
+    <header class="crystal-effect">
+        <h1>Tienda</h1>
+    </header>
+
+    <nav class="menu crystal-effect">
+        <a href="#">Inicio</a>
+        <a href="#">Acerca de</a>
+        <a href="#">Contacto</a>
+    </nav>
+<main></main>
+    <section class="content">
+        <!-- <div class="column crystal-effect">
+            <p>Contenido columna izquierda</p>
+            <p>Contenido final columna izquierda</p>
+        </div> -->
+        <article class="middle-column crystal-effect">
+            <h2 style="text-align: center;">Tienda online</h2>
+            <p>Tienda computer shop ofrece una gama de productos <strong>tecnológicos</strong> y <strong>servios a los clientes</strong>.</p>
+            <p><i>El enfoque de la empresa</i> está en brindar un servicio al cliente de calida y compectetivos.</p>
+            
+        </article>
+        <br>
+
+        <article class="middle-column crystal-effect">
+            <h2>Productos</h2>
+            <h3 style="color: #f7c600;">sobre el producto</h3>
+            <span>
+                <p>Dale energía a tu día, potencia tu juego. Con su <b style="color: aqua;">AMD Ryzen™ 7 5700 /5700</b> para juegos,<b style="color: aqua;">Blackview MP100</b>  alcanza una frecuencia turbo máxima de 4,3 GHz, lo que lo hace ideal para una amplia gama de usos cotidianos, situaciones de trabajo y juegos, lo que garantiza un rendimiento de primera categoría y experiencias inmersivas.</p>
+                <p> La <b style="color: aqua;">luz ambiental RGB</b> aumenta la intensidad de las feroces batallas de juego y lleva la emoción a tus dedos para una sensación súper inmersiva.
+                </p>
+
+
+            </span>
+            <div>
+            <img src="https://thumb.pccomponentes.com/w-530-530/articles/1084/10845544/176-blackview-mp100-mini-pc-amd-ryzen-7-5700u-16gb-512gb-ssd.jpg"  alt="Imagen 1">
+
+            <img src="https://thumb.pccomponentes.com/w-530-530/articles/1084/10845544/6296-blackview-mp100-mini-pc-amd-ryzen-7-5700u-16gb-512gb-ssd-opiniones.jpg"  alt="Imagen 2">
+            
+            <img src="https://thumb.pccomponentes.com/w-530-530/articles/1084/10845544/489-blackview-mp100-mini-pc-amd-ryzen-7-5700u-16gb-512gb-ssd-especificaciones.jpg" alt="Imagen 3">
+
+            <img src="https://thumb.pccomponentes.com/w-530-530/articles/1084/10845544/5723-blackview-mp100-mini-pc-amd-ryzen-7-5700u-16gb-512gb-ssd-caracteristicas.jpg" alt="imagen 4">
+            <h3 style="color: #4cc912;">Mini PC Blackview MP100 Mini PC AMD Ryzen 7 5700/16GB/512GB SSD Negro</h3> 
+            <p style="color: aqua;"><b style="color: #f7c600;">Precio:</b> 309€</p>
+
+            </div>
+
+<div style="display: flex;">
+            <div class="column crystal-effect">
+                <h3>Especificaciones Blackview MP100</h3>
+                <ul>
+                    <li><b>procesador</b><p>AMD Ryzen™ 7 5700 (8 núcleos, 16 subprocesos)</p> </li>
+                </ul>
+                <br>
+                <ul>
+                    <li>
+                        <b>Conectividad</b>
+                        <ol>
+                            <li><p>Wi-Fi 6</p></li> 
+                            <li><p>Bluetooth 5.2</p></li> 
+                            <li><p>LAN 10/100/1000Mbps</p></li> 
+                        </ol>
+                    </li>
+                </ul>
+                <details>
+                    <summary>Sistema operativo</summary>
+                    <p>Windows 11 Pro</p>
+                  </details>
+            </div> 
+            <div class="column crystal-effect">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/-oHnBa1q_oU?si=6vW2jpPvaUAuZdRx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                
+               
+            </div>
+            <div>
+            <img src="https://img.pccomponentes.com/articles/1084/10845544/8589-blackview-mp100-mini-pc-amd-ryzen-7-5700u-16gb-512gb-ssd-foto.jpg" width="55%" height="65%" alt="imagen pequeña">
+           </div>
+      </div>
+
+      
+        </article>
+        <br>
+        <article class="middle-column crystal-effect">
+           
+            <blockquote class="reviews-container" cite="https://www.pccomponentes.com/opiniones/mini-pc-blackview-mp100-mini-pc-amd-ryzen-7-5700-16gb-512gb-ssd-negro?valoration=1ef827e4-ed7b-6910-a4bf-211ad35d2f85">
+                
+                <div class="review">
+                    <h3>Juan Pérez</h3>
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p>¡Excelente servicio y calidad!</p>
+                </div>
+                <div class="review">
+                    <h3>María García</h3>
+                    <p>⭐⭐⭐⭐</p>
+                    <p>Muy buena experiencia, aunque podría mejorar.</p>
+                </div>
+            </blockquote>
+            <div class="reviews-container">
+                <div class="review">
+                    <h3>Juan Pérez</h3>
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p>¡Excelente servicio y calidad!</p>
+                </div>
+                <div class="review">
+                    <h3>María García</h3>
+                    <p>✅✅✅✅</p>
+                    <p>Muy buena experiencia, aunque podría mejorar.</p>
+                </div>
+            </div>
+        </article>
+        <!-- <div class="column crystal-effect">
+            <p>Contenido columna derecha</p>
+            <p>Contenido final columna derecha</p>
+        </div> -->
+    </section>
+</main>
+
+    <footer class="crystal-effect">
+        <!-- <p>Pie de página</p> -->
+
+    <div class="contacto">
+        <h3>Contacto</h3>
+    <ul style="text-align: left;">
+        <li>Teléfono: 123-456-7890</li>
+        <li>Email: contacto@tusitio.com</li>
+        <li>Dirección: Calle 123, Ciudad</li>
+    </ul>
+    </div>
+    <hr>
+    <div>
+    <h3>Suscríbete</h3>
+    <form action='URL_DE_DESTINO' method='post'>
+         <input type='email' name='email' placeholder='Tu email' required>
+        <button type='submit'>Suscribirse</button>
+    </form>
+    </div>
+
+    <hr>
+    <div   style="text-align: center; justify-content: space-between;">
+    <h3>Síguenos</h3>
+    <a href='https://facebook.com/tusitio' target='_blank'>Facebook</a>
+    <a href='https://twitter.com/tusitio' target='_blank'>Twitter</a>
+    <!-- Otros enlaces a redes sociales -->
+    </div>
+
+    </footer>
+</body>
+</html>
