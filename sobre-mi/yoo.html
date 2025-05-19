@@ -36,6 +36,26 @@
             height: 150px;
             object-fit: cover;
         }
+        .boton-flotante {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.boton-flotante:hover {
+  background-color: #0056b3;
+}
+
        
         footer {
             background-color: #333;
@@ -126,6 +146,7 @@
         </script>
         <p><a href="#inicio" style="text-decoration: none; color: rgb(223, 9, 9);">Regresar arriba</a></p>
     </section>
+    <button class="boton-flotante"> <a href="../index.html">Portfolio</a></button>
             <footer>
         <p>&copy; 🎶✔2025 Mi Página de Presentación</p>
       

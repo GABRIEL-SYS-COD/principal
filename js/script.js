@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Efecto partículas de fondo (simple, modo dios)
+    // Efecto partículas de fondo (simple)
     const canvas = document.createElement('canvas');
     canvas.id = 'particles-bg';
     canvas.style.position = 'fixed';

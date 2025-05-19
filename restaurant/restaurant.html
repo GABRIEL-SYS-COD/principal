@@ -82,6 +82,26 @@
             margin: 20px auto;
             max-width: 1200px;
         }
+        .boton-flotante {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.boton-flotante:hover {
+  background-color: #0056b3;
+}
+
         footer {
             background-color: #32a05c;
             color: white;
@@ -140,7 +160,7 @@
         <h2>Per què el nostre menjar és de més qualitat?</h2>
         <p>Utilitzem només ingredients frescos, de temporada i de proximitat. Els nostres cuiners són experts en crear plats que combinen tradició i innovació.</p>
     </aside>
-
+<button class="boton-flotante"> <a href="../index.html">Portfolio</a></button>
     <footer id="contacte">
         <p>Horari: Dilluns a Divendres de 12:00 a 22:00</p>
         <p>Adreça: Carrer del Sant Grial, 123, Barcelona</p>
