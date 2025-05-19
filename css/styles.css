@@ -736,10 +736,9 @@ textarea {
 }
 
 .projects-grid a {
-    -webkit-user-select: auto;
-    -moz-user-select: auto;
-    -ms-user-select: auto;
-    user-select: auto;
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
 }
 
 
@@ -755,7 +754,7 @@ textarea {
     min-width: 300px;
     max-width: 400px;
     overflow: hidden;
-    cursor: pointer;
+    cursor: default;
     transition: transform 0.3s;
 }
 

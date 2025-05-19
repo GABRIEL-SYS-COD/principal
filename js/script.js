@@ -24,10 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for navigation links
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
             const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            targetSection.scrollIntoView({ behavior: 'smooth' });
+            // Solo prevenir el comportamiento por defecto para enlaces internos
+            if (targetId.startsWith('#')) {
+                e.preventDefault();
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
         });
     });
 
@@ -89,7 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            if (href.length > 1 && document.querySelector(href)) {
+            // Solo aplicar desplazamiento suave a enlaces internos con ID existente
+            if (href.startsWith('#') && href.length > 1 && document.querySelector(href)) {
                 e.preventDefault();
                 document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
             }
@@ -202,10 +208,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     projectsGrid.addEventListener('mousemove', (e) => {
         if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - projectsGrid.offsetLeft;
-        const walk = (x - startX) * 3; // Ajusta la velocidad de desplazamiento
-        projectsGrid.scrollLeft = scrollLeft - walk;
+        // Solo prevenir el comportamiento por defecto si no es un enlace
+        if (!e.target.closest('a')) {
+            e.preventDefault();
+            const x = e.pageX - projectsGrid.offsetLeft;
+            const walk = (x - startX) * 3; // Ajusta la velocidad de desplazamiento
+            projectsGrid.scrollLeft = scrollLeft - walk;
+        }
     });
 
     // Swipe functionality for projects grid using mouse wheel
