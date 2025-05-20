@@ -1,0 +1,399 @@
+<!-- 
+    Documento HTML principal que contiene todos los formularios
+    Características:
+    - Responsive design
+    - Tema cyberpunk con efectos de aurora
+    - Navegación rápida entre formularios
+    - Validación de formularios
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8">
+    <!-- Configuración de viewport para diseño responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <!-- Estilos CSS principales -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<nav class="quick-nav">
+    <div class="nav-wrapper">
+        <button class="nav-scroll" id="scrollLeft">‹</button>
+        <div class="nav-links">
+            <a href="#registro">Registro</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#sat">SAT</a>
+            <a href="#sugerencias">Sugerencias</a>
+            <a href="#citas">Citas</a>
+            <a href="#encuesta">Encuesta</a>
+            <a href="#presupuesto">Presupuesto</a>
+            <a href="#newsletter">Newsletter</a>
+            <a href="#incidencias">Incidencias</a>
+        </div>
+        <button class="nav-scroll" id="scrollRight">›</button>
+    </div>
+</nav>
+<main>
+    <header>
+        <h1>Formularios</h1>
+        <p>En esta sección encontrará los formularios de contacto, registro, asistencia técnica y más.</p>
+    </header>
+    <hr>
+
+    <!-- Formulario de Registro -->
+    <section id="registro">
+        <div class="form-header">
+            <h2>Registro de Usuario</h2>
+            <p>Complete los siguientes datos para crear su cuenta.</p>
+        </div>
+        <form action="enviar_registro.php" method="POST">
+            <div class="form-group">
+                <label for="nombre" class="required">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ingrese su nombre">
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="required">Email</label>
+                <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+            </div>
+
+            <div class="form-group">
+                <label for="contraseña" class="required">Contraseña</label>
+                <input type="password" id="contraseña" name="contraseña" required placeholder="Mínimo 8 caracteres">
+                <small>La contraseña debe contener al menos 8 caracteres, una mayúscula y un número</small>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="terminos" name="terminos" required>
+                <label for="terminos" class="required">Acepto los términos y condiciones</label>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="privacy" name="privacy" required>
+                <label for="privacy" class="required">He leído y acepto la política de privacidad</label>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="cookies" name="cookies" required>
+                <label for="cookies" class="required">Acepto el uso de cookies</label>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="news" name="news" required>
+                <label for="news" class="required">Deseo recibir noticias y actualizaciones</label>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="promos" name="promos" required>
+                <label for="promos" class="required">Deseo recibir promociones y ofertas especiales</label>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="ads" name="ads" required>
+                <label for="ads" class="required">Acepto recibir publicidad personalizada</label>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="third-party" name="third-party" required>
+                <label for="third-party" class="required">Acepto compartir mis datos con terceros</label>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="btn" onclick="window.location.href='index.html'">Cancelar</button>
+                <button type="reset" class="btn">Limpiar</button>
+                <button type="submit" class="btn btn-primary" onclick="alert('Gracias por registrarte!')">Registrar</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section id="contacto">
+        <div class="form-header">
+            <h2>Contacto</h2>
+            <p>Déjenos su mensaje y nos pondremos en contacto con usted lo antes posible.</p>
+        </div>
+        <form action="enviar_contacto.php" method="POST">
+            <div class="form-group">
+                <label for="nombre_contacto" class="required">Nombre</label>
+                <input type="text" id="nombre_contacto" name="nombre_contacto" required placeholder="Ingrese su nombre completo">
+            </div>
+
+            <div class="form-group">
+                <label for="email_contacto" class="required">Email</label>
+                <input type="email" id="email_contacto" name="email_contacto" required placeholder="ejemplo@correo.com">
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje_contacto" class="required">Mensaje</label>
+                <textarea id="mensaje_contacto" name="mensaje_contacto" rows="4" required placeholder="Escriba su mensaje aquí..."></textarea>
+            </div>
+
+            <div class="button-group">
+                <button type="reset" class="btn">Limpiar</button>
+                <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Formulario SAT -->
+    <section id="sat">
+        <div class="form-header">
+            <h2>Asistencia Técnica (SAT)</h2>
+            <p>Solicitud de soporte técnico para sus equipos.</p>
+        </div>
+        <form action="/action_page.php" autocomplete="on">
+            <div class="form-group">
+                <label for="fname2" class="required">Nombre</label>
+                <input type="text" id="fname2" name="fname2" required placeholder="Introduzca su nombre">
+            </div>
+
+            <div class="form-group">
+                <label for="lname2" class="required">Apellidos</label>
+                <input type="text" id="lname2" name="lname2" required placeholder="Introduzca sus apellidos">
+            </div>
+
+            <div class="form-group">
+                <label for="email2" class="required">Correo electrónico</label>
+                <input type="email" id="email2" name="email2" required placeholder="ejemplo@correo.com">
+            </div>
+
+            <div class="form-group">            <label for="phone2" class="required">Teléfono</label>
+                <input type="tel" id="phone2" name="phone2" pattern="[69][0-9]{8}" required placeholder="612345678">
+                <small>Formato: Número español que empiece por 6 o 9 (9 dígitos en total)</small>
+            </div>
+
+            <div class="form-group">
+                <label for="equip2" class="required">Equipo informático</label>
+                <input type="text" id="equip2" name="equip2" required placeholder="Ej: Portátil, PC, Impresora">
+                <small>Indique el tipo de equipo y modelo si lo conoce</small>
+            </div>
+
+            <div class="form-group">
+                <label for="problema2" class="required">Descripción del problema</label>
+                <textarea id="problema2" name="problema2" rows="4" required placeholder="Describa el problema que está experimentando..."></textarea>
+            </div>
+
+            <div class="button-group">
+                <button type="reset" class="btn">Limpiar</button>
+                <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Formulario de Sugerencias -->
+    <section id="sugerencias">
+        <div class="form-header">
+            <h2>Sugerencias</h2>
+            <p>¿Tienes alguna idea o sugerencia para mejorar nuestro servicio? ¡Compártela con nosotros!</p>
+        </div>
+        <form action="enviar_sugerencia.php" method="POST">
+            <div class="form-group">
+                <label for="nombre_sug" class="required">Nombre</label>
+                <input type="text" id="nombre_sug" name="nombre_sug" required placeholder="Ingrese su nombre">
+            </div>
+            <div class="form-group">
+                <label for="email_sug" class="required">Email</label>
+                <input type="email" id="email_sug" name="email_sug" required placeholder="ejemplo@correo.com">
+            </div>
+            <div class="form-group">
+                <label for="tipo_sug" class="required">Tipo de sugerencia</label>
+                <select id="tipo_sug" name="tipo_sug" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="funcionalidad">Funcionalidad</option>
+                    <option value="diseño">Diseño</option>
+                    <option value="usabilidad">Usabilidad</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mensaje_sug" class="required">Mensaje</label>
+                <textarea id="mensaje_sug" name="mensaje_sug" rows="4" required placeholder="Describe tu sugerencia o idea..."></textarea>
+            </div>
+            <div class="button-group">
+                <button type="reset" class="btn">Limpiar</button>
+                <button type="submit" class="btn btn-primary">Enviar sugerencia</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Formulario de Reserva de Cita -->
+    <section id="citas">
+        <div class="form-header">
+            <h2>Reserva de Cita</h2>
+            <p>Solicita una cita con nuestro equipo para atención personalizada.</p>
+        </div>
+        <form action="enviar_cita.php" method="POST">
+            <div class="form-group">
+                <label for="nombre_cita" class="required">Nombre</label>
+                <input type="text" id="nombre_cita" name="nombre_cita" required placeholder="Ingrese su nombre">
+            </div>
+            <div class="form-group">
+                <label for="email_cita" class="required">Email</label>
+                <input type="email" id="email_cita" name="email_cita" required placeholder="ejemplo@correo.com">
+            </div>
+            <div class="form-group">
+                <label for="fecha_cita" class="required">Fecha</label>
+                <input type="date" id="fecha_cita" name="fecha_cita" required>
+            </div>
+            <div class="form-group">
+                <label for="hora_cita" class="required">Hora</label>
+                <input type="time" id="hora_cita" name="hora_cita" required>
+            </div>
+            <div class="form-group">
+                <label for="motivo_cita" class="required">Motivo</label>
+                <textarea id="motivo_cita" name="motivo_cita" rows="3" required placeholder="Describe el motivo de la cita..."></textarea>
+            </div>
+            <div class="button-group">
+                <button type="reset" class="btn">Limpiar</button>
+                <button type="submit" class="btn btn-primary">Reservar cita</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Formulario de Encuesta de Satisfacción -->
+    <section id="encuesta">
+        <div class="form-header">
+            <h2>Encuesta de Satisfacción</h2>
+            <p>Ayúdanos a mejorar valorando tu experiencia con nuestro servicio.</p>
+        </div>
+        <form action="enviar_encuesta.php" method="POST">
+            <div class="form-group">
+                <label for="nombre_encuesta">Nombre (opcional)</label>
+                <input type="text" id="nombre_encuesta" name="nombre_encuesta" placeholder="Ingrese su nombre">
+            </div>
+            <div class="form-group">
+                <label for="satisfaccion" class="required">Nivel de satisfacción</label>
+                <select id="satisfaccion" name="satisfaccion" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="excelente">Excelente</option>
+                    <option value="bueno">Bueno</option>
+                    <option value="regular">Regular</option>
+                    <option value="malo">Malo</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comentarios">Comentarios</label>
+                <textarea id="comentarios" name="comentarios" rows="3" placeholder="¿Qué podemos mejorar?"></textarea>
+            </div>
+            <div class="button-group">
+                <button type="reset" class="btn">Limpiar</button>
+                <button type="submit" class="btn btn-primary">Enviar encuesta</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Formulario de Solicitud de Presupuesto -->
+    <section id="presupuesto">
+        <div class="form-header">
+            <h2>Solicitud de Presupuesto</h2>
+            <p>Solicita un presupuesto personalizado para tu proyecto o servicio.</p>
+        </div>
+        <form action="enviar_presupuesto.php" method="POST">
+            <div class="form-group">
+                <label for="nombre_pres" class="required">Nombre</label>
+                <input type="text" id="nombre_pres" name="nombre_pres" required placeholder="Ingrese su nombre">
+            </div>
+            <div class="form-group">
+                <label for="email_pres" class="required">Email</label>
+                <input type="email" id="email_pres" name="email_pres" required placeholder="ejemplo@correo.com">
+            </div>
+            <div class="form-group">
+                <label for="servicio_pres" class="required">Servicio requerido</label>
+                <select id="servicio_pres" name="servicio_pres" required>
+                    <option value="">Seleccione un servicio</option>
+                    <option value="desarrollo">Desarrollo web</option>
+                    <option value="soporte">Soporte técnico</option>
+                    <option value="consultoria">Consultoría</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="detalle_pres" class="required">Detalles</label>
+                <textarea id="detalle_pres" name="detalle_pres" rows="4" required placeholder="Describe tu necesidad o proyecto..."></textarea>
+            </div>
+            <div class="button-group">
+                <button type="reset" class="btn">Limpiar</button>
+                <button type="submit" class="btn btn-primary">Solicitar presupuesto</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Formulario de Alta a Newsletter -->
+    <section id="newsletter">
+        <div class="form-header">
+            <h2>Alta a Newsletter</h2>
+            <p>Recibe novedades, noticias y promociones directamente en tu correo.</p>
+        </div>
+        <form action="enviar_newsletter.php" method="POST">
+            <div class="form-group">
+                <label for="email_news" class="required">Email</label>
+                <input type="email" id="email_news" name="email_news" required placeholder="ejemplo@correo.com">
+            </div>
+            <div class="form-group">
+                <label for="temas_news">Temas de interés</label>
+                <select id="temas_news" name="temas_news">
+                    <option value="general">General</option>
+                    <option value="tecnologia">Tecnología</option>
+                    <option value="ofertas">Ofertas</option>
+                    <option value="eventos">Eventos</option>
+                </select>
+            </div>
+            <div class="button-group">
+                <button type="reset" class="btn">Limpiar</button>
+                <button type="submit" class="btn btn-primary">Suscribirse</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Formulario de Reporte de Incidencia -->
+    <section id="incidencias">
+        <div class="form-header">
+            <h2>Reporte de Incidencia</h2>
+            <p>Informa de cualquier problema técnico o incidencia detectada.</p>
+        </div>
+        <form action="enviar_incidencia.php" method="POST">
+            <div class="form-group">
+                <label for="nombre_inc">Nombre</label>
+                <input type="text" id="nombre_inc" name="nombre_inc" placeholder="Ingrese su nombre">
+            </div>
+            <div class="form-group">
+                <label for="email_inc" class="required">Email</label>
+                <input type="email" id="email_inc" name="email_inc" required placeholder="ejemplo@correo.com">
+            </div>
+            <div class="form-group">
+                <label for="tipo_inc" class="required">Tipo de incidencia</label>
+                <select id="tipo_inc" name="tipo_inc" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="error">Error en la web</option>
+                    <option value="acceso">Problema de acceso</option>
+                    <option value="contenido">Contenido incorrecto</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="detalle_inc" class="required">Detalle</label>
+                <textarea id="detalle_inc" name="detalle_inc" rows="4" required placeholder="Describe la incidencia..."></textarea>
+            </div>
+            <div class="button-group">
+                <button type="reset" class="btn">Limpiar</button>
+                <button type="submit" class="btn btn-primary">Reportar incidencia</button>
+            </div>
+        </form>
+    </section>
+</main>
+
+<a href="../index.html" class="floating-btn floating-btn-left" title="Ir a página externa">
+    <span>←</span>
+</a>
+
+<button id="back-to-top" class="floating-btn floating-btn-right" title="Volver arriba">
+    <span>↑</span>
+</button>
+
+<footer>    <p>Derechos reservados &copy; 2025</p>
+</footer>
+<script src="js/aurora-effect.js"></script>
+<script src="js/form-functions.js"></script>
+</body>
+</html>

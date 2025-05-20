@@ -1,0 +1,297 @@
+/*
+ * Estilos para el Formulario de Contacto con efecto Matrix
+ * Autor: GABRIEL-SYS-COD
+ * Versión: 1.0
+ * 
+ * VARIABLES PERSONALIZABLES
+ * --matrix-green: Color principal del efecto matrix
+ * --matrix-dark: Color de fondo
+ * --glass-bg: Color de fondo para efectos de cristal
+ * --glass-border: Color del borde para efectos de cristal
+ *
+ * SECCIONES PRINCIPALES:
+ * 1. Variables y configuración global
+ * 2. Estilos del contenedor principal
+ * 3. Efectos Matrix y animaciones
+ * 4. Estilos del formulario y modal
+ * 5. Animaciones y transiciones
+ */
+
+/* 1. Variables y configuración global */
+:root {
+  --matrix-green: #00ff41;
+  --matrix-dark: #0a0a0a;
+  --glass-bg: rgba(22, 22, 22, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+body {
+  background: var(--matrix-dark);
+  color: var(--matrix-green);
+  font-family: 'Courier New', monospace;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  position: relative;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-y: auto;
+  height: calc(100vh - 4rem);
+  scrollbar-width: thin;
+  scrollbar-color: var(--matrix-green) var(--matrix-dark);
+  z-index: 1;
+  animation: fadeIn 1s ease;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+}
+
+.content-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content-wrapper::-webkit-scrollbar-track {
+  background: var(--matrix-dark);
+}
+
+.content-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--matrix-green);
+  border-radius: 20px;
+  border: 2px solid var(--matrix-dark);
+}
+
+a {
+  color: var(--matrix-green);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  border-bottom-color: var(--matrix-green);
+  text-shadow: 0 0 8px var(--matrix-green);
+}
+
+h1, h2, h3 {
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+  color: var(--matrix-green);
+  font-weight: bold;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 2px rgba(0, 255, 65, 0.3);
+  color: #fff;
+  font-size: 1.1em;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, transparent 50%, rgba(0, 255, 65, 0.08));
+  animation: matrix-rain 20s linear infinite;
+  pointer-events: none;
+  filter: brightness(1.5) blur(1px);
+}
+
+.matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.75;
+  filter: brightness(2) contrast(1.5) saturate(1.2);
+  mix-blend-mode: screen;
+}
+
+.matrix-line {
+  position: absolute;
+  width: 20px;
+  color: var(--matrix-green);
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+  transform: translateY(-100%);
+  text-shadow: 0 0 25px var(--matrix-green), 0 0 35px var(--matrix-green);
+  filter: brightness(2.5) blur(0.3px);
+  animation: fall linear infinite;
+}
+
+.boton-flotante {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 12px 25px;
+  font-size: 16px;
+  background: rgba(0, 255, 65, 0.1);
+  color: var(--matrix-green);
+  border: 1px solid var(--matrix-green);
+  border-radius: 50px;
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: slideIn 0.6s ease-out, glowPulse 2s infinite;
+  transition: all 0.3s ease;
+}
+
+.boton-flotante:hover {
+  background: rgba(0, 255, 65, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 65, 0.5);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1500;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.modal-contenido {
+  background: var(--glass-bg);
+  margin: 5% auto;
+  padding: 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  animation: fadeIn 0.3s ease;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.cerrar {
+  color: var(--matrix-green);
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.cerrar:hover {
+  color: #fff;
+  text-shadow: 0 0 10px var(--matrix-green);
+}
+
+.modal h2 {
+  color: var(--matrix-green);
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+  margin-bottom: 20px;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal form label {
+  margin-top: 10px;
+  font-weight: bold;
+  color: var(--matrix-green);
+}
+
+.modal form input,
+.modal form textarea {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--matrix-green);
+  color: var(--matrix-green);
+  font-size: 14px;
+  font-family: 'Courier New', monospace;
+  transition: all 0.3s ease;
+}
+
+.modal form input:focus,
+.modal form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal form button {
+  background: rgba(0, 255, 65, 0.1);
+  color: var(--matrix-green);
+  border: 1px solid var(--matrix-green);
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Courier New', monospace;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.modal form button:hover {
+  background: rgba(0, 255, 65, 0.2);
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+}
+
+#estado-envio {
+  margin-top: 15px;
+  font-style: italic;
+  color: var(--matrix-green);
+  text-align: center;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes matrix-rain {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 15px rgba(0, 255, 65, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(0, 255, 65, 0.5); }
+  100% { box-shadow: 0 0 15px rgba(0, 255, 65, 0.3); }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}

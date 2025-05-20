@@ -1,0 +1,138 @@
+<!-- 
+  Formulario de contacto con efecto Matrix
+  Autor: GABRIEL-SYS-COD
+  Versión: 1.0
+  Fecha: Mayo 2025
+  
+  Características principales:
+  - Efecto visual Matrix con caracteres japoneses
+  - Formulario integrado con Google Sheets
+  - Diseño responsivo con glassmorphism
+  - Animaciones y efectos visuales
+  
+  Elementos personalizables:
+  - Variables CSS en styles.css para colores y efectos
+  - URL de Google Sheets en script.js
+  - Contenido del formulario y textos
+  - Estilos inline para ajustes específicos
+-->
+<!DOCTYPE html>
+<!-- 
+  Formulario de contacto con efecto Matrix
+  Autor: GABRIEL-SYS-COD
+  Versión: 1.0
+  Fecha: Mayo 2025
+  
+  Características principales:
+  - Efecto visual Matrix con caracteres japoneses
+  - Formulario integrado con Google Sheets
+  - Diseño responsivo con glassmorphism
+  - Animaciones y efectos visuales
+  
+  Elementos personalizables:
+  - Variables CSS en styles.css para colores y efectos
+  - URL de Google Sheets en script.js
+  - Contenido del formulario y textos
+  - Estilos inline para ajustes específicos
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Formulario de contacto con efectos visuales Matrix y morfismo de cristal" />
+  <meta name="author" content="GABRIEL-SYS-COD" />
+  <title>Formulario de Contacto - Matrix Style</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main>
+    <div class="content-wrapper" style="text-align: center; padding: 2.5rem 2rem; max-height: 80vh; overflow-y: auto;">
+      <h1 style="font-size: 2.5em; margin-bottom: 0.5em; letter-spacing: 2px;">Contacto</h1>
+      <p style="font-size: 1.2em; margin-bottom: 1.2em;">¿Tienes alguna pregunta o comentario? ¡Estamos aquí para ayudarte!</p>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 1.2em;">
+        <div style="background: rgba(0,255,65,0.07); border-radius: 10px; padding: 1.2em 2em; max-width: 500px; width: 100%; box-shadow: 0 0 10px rgba(0,255,65,0.08);">
+          <i class="fas fa-envelope" style="font-size: 1.5em; margin-bottom: 0.5em;"></i>
+          <p style="margin: 0;">Puedes escribirnos a<br>
+            <a href="mailto:contacto@ejemplo.com" style="font-size: 1.1em;">contacto@ejemplo.com</a>
+          </p>
+        </div>
+        <div style="background: rgba(0,255,65,0.07); border-radius: 10px; padding: 1.2em 2em; max-width: 500px; width: 100%; box-shadow: 0 0 10px rgba(0,255,65,0.08);">
+          <i class="fas fa-phone" style="font-size: 1.5em; margin-bottom: 0.5em;"></i>
+          <p style="margin: 0;">O llámanos al<br>
+            <a href="tel:+123456789" style="font-size: 1.1em;">+1 (234) 567-89</a>
+          </p>
+        </div>
+      </div>
+      <p style="margin-top: 2em; font-size: 1.1em;">También puedes completar el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+      <p style="margin-top: 1.5em; font-size: 0.98em; color: #b6ffb6; background: rgba(0,255,65,0.04); border-radius: 8px; padding: 0.8em 1em;">
+        <i class="fas fa-lock" style="margin-right: 0.5em;"></i>
+        La información que compartas será tratada de manera confidencial y solo se usará para responder a tu consulta.
+      </p>
+      <section id="info-contacto" style="padding: 40px 0 0 0; max-width: 900px; margin: auto; font-family: sans-serif;">
+        <h2 style="font-size: 2em; margin-bottom: 20px;">📬 Formulario de Contacto Integrado con Google Sheets</h2>
+        <p style="font-size: 1.1em; line-height: 1.6;">
+          Este formulario de contacto está integrado directamente con una hoja de cálculo de Google Sheets. 
+          Cuando una persona completa el formulario, sus datos se envían automáticamente a una hoja online, sin necesidad de servidores o bases de datos externas.
+        </p>
+        <h3 style="margin-top: 30px; color: #17a2b8;">¿Para qué sirve?</h3>
+        <ul style="line-height: 1.6; padding-left: 20px; text-align: left;">
+          <li>✅ Recoger mensajes o solicitudes directamente desde la web</li>
+          <li>✅ Guardar automáticamente los datos en tu Google Sheets</li>
+          <li>✅ Ideal para formularios de contacto, feedback, soporte, inscripciones y más</li>
+        </ul>
+        <h3 style="margin-top: 30px; color: #17a2b8;">¿Cómo funciona?</h3>
+        <ol style="line-height: 1.8; padding-left: 20px; text-align: left;">
+          <li>🔧 <strong>1. Creás una hoja en Google Sheets</strong> y la nombrás "Respuestas"</li>
+          <li>⚙️ <strong>2. Configurás un script en Apps Script</strong> que reciba los datos (como backend)</li>
+          <li>🌐 <strong>3. Publicás el script como "Web App"</strong> para obtener una URL pública</li>
+          <li>📩 <strong>4. El formulario HTML usa esa URL</strong> para enviar los datos vía <code>fetch()</code></li>
+          <li>🗂️ <strong>5. Los datos llegan automáticamente</strong> a tu hoja de cálculo en tiempo real</li>
+        </ol>
+        <h3 style="margin-top: 30px; color: #17a2b8;">¿Qué incluye este componente?</h3>
+        <ul style="line-height: 1.6; padding-left: 20px; text-align: left;">
+          <li>🖱️ Un <strong>botón flotante</strong> siempre visible en la esquina inferior derecha</li>
+          <li>🧩 Un <strong>modal con animaciones</strong> que se abre automáticamente</li>
+          <li>📥 Un <strong>formulario con nombre, email y mensaje</strong></li>
+          <li>🔒 <strong>Validaciones básicas</strong> y estado de envío ("Enviado", "Error"...)</li>
+          <li>📊 <strong>Integración directa con Google Sheets</strong> sin usar servidores</li>
+        </ul>
+        <p style="margin-top: 40px; font-style: italic;">
+          Este sistema es eficiente, seguro y completamente gratuito, usando solo herramientas de Google y HTML. Perfecto para desarrollos rápidos y sin complicaciones.
+        </p>
+      </section>
+
+      <footer style="text-align: center; padding: 0.5em 0; background: rgba(0, 0, 0, 0.8); color: #fff; font-size: 0.9em;">
+        <p>&copy; 2025 GABRIEL-SYS-COD. Todos los derechos reservados.</p>
+        <p><a href="https://www.tuempresa.com/privacidad" style="color: #fff;">Política de Privacidad</a></p>
+      </footer>
+    </div>
+  </main>
+
+  <button class="boton-flotante" onclick="abrirModal()">
+    <i class="fas fa-envelope"></i> Contacto
+  </button>
+
+  <div id="miModal" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarModal()">&times;</span>
+      <h2>Formulario de Contacto</h2>
+      <form id="formulario-contacto">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+      <p id="estado-envio"></p>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
